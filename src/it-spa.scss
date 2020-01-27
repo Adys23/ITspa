@@ -1,0 +1,25 @@
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
+
+
+$background-black: #343a40;
+$text-white: #ffffff;
+
+body {
+    background-color: $background-black;
+    color: $text-white;
+}
+
+.navbar-brand {
+    font-size: 6rem;
+}
+
+
+
+.card {
+    color: $background-black; // temporary
+    margin: 15px;
+    width: 200px;
+
+}
+
+

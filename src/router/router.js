@@ -1,44 +1,59 @@
 import $ from 'jquery';
-import {routes} from './routes';
-import {ups} from '../views/ups';
-
+import { routes } from './routes';
+import { ups } from '../views';
+import { routeChange } from './routeChange';
 
 export class Router {
 
-    constructor() {
-        this.body = $(document.body);
-        this.outlet = $('main');
-        this.routes = routes;
+  constructor() {
+    this.body = $(document.body);
+    this.outlet = $('main');
+    this.routes = routes;
+  }
+
+  mount(outlet) {
+    this.outlet = outlet;
+
+    // detail to, np. { path: '/booking' }
+    this.body.on(routeChange, (event, detail) => {
+      this.navigate(detail.path);
+    });
+
+    // TODO: uzyj zdarzenia 'popstate', aby wyrenderowac odpowiednia
+    // sciezke, gdy uzytkownik klika Wstecz (<-) lub Naprzod (->)
+  }
+
+  init() {
+    this.navigate(location.pathname);
+  }
+
+  get(path) {
+    return this.routes.find(route => route.path === path );
+  }
+
+  has(path) {
+    return this.get(path) !== undefined;
+  }
+
+  navigate(path, data = {}) {
+    // sciezka istnieje, mozna nawigowac
+    if (this.has(path)) {
+      // { path: '/booking', data: {}, component: booking }
+      const { component } = this.get(path);
+      
+      component()// dostaje Promise zaw. html widoku
+        .then(html => {
+          // renderuje ten html wew. outletu
+          this.outlet.empty().append(html);
+        })
+      
+    } else {
+      const html = ups();
+      this.outlet.empty().append(html);
     }
 
-    mount(outlet) {
-        this.outlet = outlet;
-    }
-
-    init() {
-        this.navigate(location.pathname);
-    }
-
-    get(path) {
-        return this.routes.find(route => route.path === path);
-    }
-
-    has(path) {
-        return this.get(path) !== undefined;
-    }
-
-    navigate(path, data = {}) {
-
-        if (this.has(path)) {
-            const {component} = this.get(path);
-
-            //clear main element in html and append fragment from specified js view to it 
-            this.outlet.empty().append(component());
-            
-        } else {
-            this.outlet.empty().append(ups());
-        }
-        history.pushState(data, '', path);
-    }
+    history.pushState(data, '', path);
+  }
+   
 
 }

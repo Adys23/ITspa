@@ -1,5 +1,5 @@
 export * from './booking';
+export * from './home';
 export * from './rooms';
 export * from './treatments';
-export * from './home';
 export * from './ups';

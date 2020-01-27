@@ -1,12 +1,11 @@
 import $ from 'jquery';
 
+
+
 export const booking = () => {
+  const fragment = $(new DocumentFragment());
 
-    const fragment = $(new DocumentFragment());
-
-    fragment.append('<h2>Booking</h2>')
-            .append('<p>lorem</p>');
+  fragment.append('<p>Select dates: </p>')
 
     return fragment;
-
 };

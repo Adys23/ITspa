@@ -1,12 +1,19 @@
 import $ from 'jquery';
+import { treatmentsService } from '../common/treatments-service';
+import {treatment} from '../common/treatment';
 
 export const treatments = () => {
+  const fragment = $(new DocumentFragment());
 
-    const fragment = $(new DocumentFragment());
+  return treatmentsService.getTreatments().then(treatmentData => {
 
-    fragment.append('<h2>Rooms</h2>')
-            .append('<p>lorem</p>');
+    treatmentData.forEach(element => {
+
+      fragment
+      .append(treatment(element.name, element.area, element.time, element.price));
+
+    });
 
     return fragment;
-
+  });
 };
