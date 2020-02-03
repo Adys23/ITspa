@@ -2,24 +2,53 @@
 
 
 $background-black: #343a40;
+$button-red: #ec7373;
 $text-white: #ffffff;
 
 body {
     background-color: $background-black;
     color: $text-white;
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 3rem;
+    }
 }
 
-.navbar-brand {
-    font-size: 6rem;
+.navbar {
+
+    .navbar-toggler {
+        font-size: 4rem;
+    }
+
+    .navbar-brand {
+        font-size: 6rem;
+    }
+
+    .navbar-nav {
+        font-size: 3rem;
+    }
+
 }
-
-
 
 .card {
     color: $background-black; // temporary
-    margin: 15px;
-    width: 200px;
+    margin: 40px 20px;
+    font-size: 2.5rem;
 
+    .card-title {
+        font-size: 4rem;
+    }
+
+    .btn {
+        background-color: $button-red;
+        color: $text-white;
+        height: 100px;
+        font-size: 3rem;
+    }
 }
 
 

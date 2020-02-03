@@ -3,20 +3,20 @@ import $ from 'jquery';
 
 export const treatment = (name, area, time, price, click) => {
 
-    const treatmentsName = $(`<h5 class="card-title"></h5>`);
+    const treatmentsName = $(`<p class="card-title"></p>`);
     const bodyArea = $(`<p class="card-text"></p>`);
     const treatmentTime = $(`<p class="card-text"></p>`);
     const treatmentPrice = $(`<p class="card-text__price"></p>`);
 
     const treatmentCard = $(
-        `<div class="card treatment-card" style="width: 18rem;">
+        `<div class="card treatment-card">
             <img src="..." class="card-img-top" alt="...">
         </div>`
         );
     
     const cardBody = $(`<div class="card-body"></div>`);
 
-    const anchor = $('<a href="#" class="btn btn-dark">Go somewhere</a>');
+    const anchor = $('<a href="#" class="btn">Zarezerwuj wizytę</a>');
     anchor.on('click', click);
 
 

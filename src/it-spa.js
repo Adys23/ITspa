@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap';
-import 'bootstrap/dist/js/bootstrap.bundle'
+import 'bootstrap/dist/js/bootstrap.bundle';
 import './it-spa.scss';
 
 import { Router } from './router/router';
