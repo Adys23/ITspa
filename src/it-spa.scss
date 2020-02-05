@@ -51,4 +51,34 @@ body {
     }
 }
 
+.modal {
+    color: $background-black;
 
+    .modal-title {
+        font-size: 3rem;
+    }
+
+    .close {
+        font-size: 4rem;
+    }
+
+    .modal-dialog {
+        font-size: 2rem;
+        max-width: none;
+        margin: auto;
+
+        .form-control {
+            font-size: 2rem;
+        }
+    }
+
+    .btn {
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        background-color: $button-red;
+        color: $text-white;
+    }
+}

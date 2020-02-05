@@ -16,7 +16,7 @@ export const room = (name, beds, guests, price, click) => {
     
     const cardBody = $(`<div class="card-body"></div>`);
 
-    const anchor = $('<a href="/treatments" class="btn btn-dark">Zarezerwuj</a>');
+    const anchor = $('<a href="/treatments" class="btn btn-dark">Book now</a>');
     anchor.on('click', click);
 
     roomsName.text(name);

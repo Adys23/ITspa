@@ -16,7 +16,7 @@ export const treatment = (name, area, time, price, click) => {
     
     const cardBody = $(`<div class="card-body"></div>`);
 
-    const anchor = $('<a href="#" class="btn">Zarezerwuj wizytę</a>');
+    const anchor = $('<a href="#" class="btn">Book the visit</a>');
     anchor.on('click', click);
 
 
