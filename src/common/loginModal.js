@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 import {authenticate} from './authenticate';
+import { routeChange } from '../router/routeChange';
 
 export const loginModal = () => {
 
@@ -47,9 +48,7 @@ export const loginModal = () => {
     modal.find('.modal-footer').append(signUpLink)
                                 .append(submitLogin);
 
-    signUpLink.on('click', () => {
-      console.log('signed up');
-    });
+    signUpLink.on('click', () => modal.trigger(routeChange, { path: '/registration' }));
     
     submitLogin.on('click', () => {
       let userID = emailInput.val();

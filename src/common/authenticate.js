@@ -1,4 +1,3 @@
-import $ from 'jquery';
 
 export const authenticate = (userID, password) => {
 
@@ -7,7 +6,6 @@ export const authenticate = (userID, password) => {
         .then(usersData => {
             
             usersData.forEach(element => {
-                console.log(element)
                 if (element.id === userID & element.password === password) {
                     const userName = element.firstName;
                     return userName;
