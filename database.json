@@ -6,6 +6,27 @@
       "lastName": "Doe",
       "phone": "+48123456789",
       "password": "password123"
+    },
+    {
+      "id": "wasilewski.adrian.64@gmail.com",
+      "password": "aaa",
+      "firstName": "Adrian",
+      "lastName": "Wasilewski",
+      "phone": "+48510770348"
+    },
+    {
+      "id": "wasilewski.adrian.11@gmail.com",
+      "password": "aaa",
+      "firstName": "Adrian",
+      "lastName": "Wasilewski",
+      "phone": "+48111222333"
+    },
+    {
+      "id": "olapawlusiow@wp.pl",
+      "password": "www",
+      "firstName": "Aleksandra",
+      "lastName": "Wasilewska",
+      "phone": "711122233"
     }
   ],
   "rooms": [
@@ -90,4 +111,3 @@
     }
   ]
 }
- 

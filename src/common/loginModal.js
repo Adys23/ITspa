@@ -37,7 +37,7 @@ export const loginModal = () => {
 
     const passInput = $(`<input type="password" class="form-control" id="inputPassword1">`);
 
-    const signUpLink = $(`<button type="button" class="btn btn-link" id="signUp">Sign up if do not have an account yet</button>`);
+    const signUpLink = $(`<button type="button" class="btn btn-link" id="signUp" data-dismiss="modal">Sign up if do not have an account yet</button>`);
 
     const submitLogin = $(`<button type="submit" class="btn btn-primary" id="submitLogin">Login</button>`);
 
@@ -48,7 +48,10 @@ export const loginModal = () => {
     modal.find('.modal-footer').append(signUpLink)
                                 .append(submitLogin);
 
-    signUpLink.on('click', () => modal.trigger(routeChange, { path: '/registration' }));
+    signUpLink.on('click', () => {
+      modal.trigger(routeChange, { path: '/registration' });
+    $(".modal-backdrop").toggle();
+    });
     
     submitLogin.on('click', () => {
       let userID = emailInput.val();

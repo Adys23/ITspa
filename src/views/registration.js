@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import { routeChange } from '../router/routeChange';
+
 
 export const registration = () => {
   const fragment = $(new DocumentFragment());
@@ -6,7 +8,7 @@ export const registration = () => {
   fragment
     .append('<h2>Registation form</h2>')
     .append(`
-    <form class="form-horizontal register" action='' method="POST">
+    <form class="form-horizontal register" action='/registration'>
       <div class="container">
         <div class="row justify-content-around">
           <fieldset>
@@ -56,7 +58,7 @@ export const registration = () => {
             <div class="control-group">
         <!-- Button -->
               <div class="controls">
-              <button class="btn btn-success">Register</button>
+              <button class="btn btn-success registerBtn">Register</button>
               </div>
             </div>
           </fieldset>
@@ -65,33 +67,35 @@ export const registration = () => {
     </form>
     `);
 
-  $(".register").submit(() => {
 
-    // Stop form from submitting normally
-  // event.preventDefault();
+    $(document).ready(function(){
+      $(".register").submit(function(event){
+        event.preventDefault();
 
-  // Get the values from elements on the form:
-  const emailInput = $("#email").val();
-  const passwordInput = $("#password").val();
-  const firstNameInput = $("#firstName").val();
-  const lastNameInput = $("#lastName").val();
-  const phoneInput = $("#phone").val();
+        const emailInput = $("#email").val();
+        const passwordInput = $("#password").val();
+        const firstNameInput = $("#firstName").val();
+        const lastNameInput = $("#lastName").val();
+        const phoneInput = $("#phone").val();
 
-  // Send the data using post
-  const posting = post( 'http://localhost:3000/users', 
-                        { id: emailInput, 
-                          password: passwordInput, 
-                          firstName: firstNameInput, 
-                          lastName: lastNameInput, 
-                          phone: phoneInput } 
-                      )
-                  .done((msg) => {
-                    alert(`Registration successful! ${msg}`)
-                  })
-                  .fail((xhr, status, error) => {
-                    alert(`Error: ${error} with status: ${status}`)
-                  })
-  });
+        $.post( 'http://localhost:3000/users', 
+                { id: emailInput, 
+                  password: passwordInput, 
+                  firstName: firstNameInput, 
+                  lastName: lastNameInput, 
+                  phone: phoneInput } 
+              )
+        .done((msg) => {
+                alert(`Registration successful!`);
+                $("body").trigger(routeChange, { path: '/' });
+              })
+        .fail((xhr, status, error) => {
+                alert(`Error: ${error}`)
+              })
+      });
+    });
+
+  
 
   return Promise.resolve(fragment);
 };
