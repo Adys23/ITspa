@@ -15,44 +15,42 @@ export const registration = () => {
     
             <div class="control-group">
         <!-- E-mail -->
-              <label class="control-label" for="email">E-mail</label>
               <div class="controls">
                 <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-                <p class="help-block">E-mail address will be also your login ID</p>
               </div>
+              <label class="control-label" for="email">E-mail</label>
             </div>
 
             <div class="control-group">
         <!-- Password-->
-              <label class="control-label" for="password">Password</label>
               <div class="controls">
                 <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
               </div>
+              <label class="control-label" for="password">Password</label>
             </div>
 
             <div class="control-group">
         <!-- User name -->
-              <label class="control-label"  for="firstName">First name</label>
               <div class="controls">
                 <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
               </div>
+              <label class="control-label"  for="firstName">First name</label>
             </div>
 
             <div class="control-group">
         <!-- User surname -->
-              <label class="control-label"  for="lastName">Surname</label>
               <div class="controls">
                 <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
               </div>
+              <label class="control-label"  for="lastName">Surname</label>
             </div>
 
             <div class="control-group">
         <!-- Phone -->
-              <label class="control-label"  for="phone">Phone number</label>
               <div class="controls">
                 <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge">
-                <p class="help-block">Please provide your phone number</p>
               </div>
+              <label class="control-label"  for="phone">Phone number</label>
             </div>
 
             <div class="control-group">

@@ -1,4 +1,7 @@
 import $ from 'jquery';
+import 'jquery-ui';
+import 'jquery-ui-bundle';
+import 'jquery-ui-multidatespicker';
 import 'bootstrap/dist/css/bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle';
 

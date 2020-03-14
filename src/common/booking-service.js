@@ -1,9 +1,12 @@
 import $ from 'jquery';
+import 'jquery-ui';
+import 'jquery-ui-multidatespicker';
+
 
 export const bookingService = 
 
     $(document).ready(function() {
-        $('#datepicker').datepicker({
+        $('#datepicker').multiDatesPicker({
             startDate: new Date(),
             multidate: true,
             format: "dd/mm/yyyy",
