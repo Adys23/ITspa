@@ -27,6 +27,13 @@
       "firstName": "Aleksandra",
       "lastName": "Wasilewska",
       "phone": "711122233"
+    },
+    {
+      "id": "today@gmail.com",
+      "password": "asdfghjk",
+      "firstName": "Marek",
+      "lastName": "Zegarek",
+      "phone": "+48222555888"
     }
   ],
   "rooms": [

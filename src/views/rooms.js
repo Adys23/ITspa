@@ -5,7 +5,7 @@ import {room} from '../common/room';
 export const rooms = () => {
   const fragment = $(new DocumentFragment());
 
-  fragment.append('<p>Select your room: </p>')
+  fragment.append('<div class="row"><p>Select your room: </p></div>')
 
   return roomsService.getRooms().then(roomData => {
 

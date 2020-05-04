@@ -11,7 +11,13 @@ body {
     
 
     main {
+        display: flex;
+        justify-content: center;
         padding: 8px 16px;
+
+        p {
+            width: 1500px;
+        }
 
         .help-block {
             font-size: 0.8rem;
@@ -23,6 +29,7 @@ body {
 .card {
     color: $background-black; // temporary
     margin: 40px 20px;
+    max-width: 400px;
 
     .btn {
         background-color: $button-red;
