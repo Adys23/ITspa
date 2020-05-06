@@ -8,8 +8,8 @@ export const home = () => {
   const loginPage = loginModal;
 
   fragment
-    .append('<h2>Home</h2>')
-    .append('<p>Lorem ipsum dolor sit amet...</p>')
+    .append('<div class="container"><div class="row"><h2>Home</h2></div></div>')
+    .append('<div class="container"><div class="row"><p>Lorem ipsum dolor sit amet...</p></div></div>')
     .append(`<div class="container">
               <div class="row justify-content-around">
                 <button type="button" class="btn btn-primary btn-lg loginBtn" data-toggle="modal" data-target="#loginModal">
