@@ -5,6 +5,8 @@ import { Cart } from '../cart/cart';
 export const room = (name, beds, guests, price) => {
 
     const Cookie = new Cart;
+    const parsedValue = Cookie.get();
+
     const roomsName = $(`<h5 class="card-title"></h5>`);
     const bedsNo = $(`<p class="card-text"></p>`);
     const guestsNo = $(`<p class="card-text"></p>`);
@@ -19,10 +21,9 @@ export const room = (name, beds, guests, price) => {
     const cardBody = $(`<div class="card-body"></div>`);
 
     const anchor = $('<a href="/treatments" class="btn btn-dark">Book now</a>');
-    anchor.on('click', () => {
-        console.log(`This is current cookie: ${document.cookie}`);
-        Cookie.set(name);
-        console.log(`This is new cookie: ${document.cookie}`);
+    anchor.on('click', () => {     
+        const newCookie = [...parsedValue, name];
+        Cookie.set(newCookie);
     });
 
     roomsName.text(name);

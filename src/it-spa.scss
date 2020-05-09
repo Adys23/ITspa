@@ -8,6 +8,10 @@ $text-white: #ffffff;
 body {
     background-color: $background-black;
     color: $text-white;
+
+    .nav-link {
+        cursor: pointer;
+    }
     
 
     main {

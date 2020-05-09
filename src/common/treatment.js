@@ -1,7 +1,11 @@
 import $ from 'jquery';
+import { Cart } from '../cart/cart';
 
 
-export const treatment = (name, area, time, price, click) => {
+export const treatment = (name, area, time, price) => {
+
+    const sessionCookie = new Cart;
+    const parsedValue = sessionCookie.get();
 
     const treatmentsName = $(`<p class="card-title"></p>`);
     const bodyArea = $(`<p class="card-text"></p>`);
@@ -16,9 +20,11 @@ export const treatment = (name, area, time, price, click) => {
     
     const cardBody = $(`<div class="card-body"></div>`);
 
-    const anchor = $('<a href="#" class="btn">Book the visit</a>');
-    anchor.on('click', click);
-
+    const anchor = $('<a href="/booking" class="btn">Book the visit</a>');
+    anchor.on('click', () => {    
+        const newCookie = [...parsedValue, name];
+        sessionCookie.set(newCookie);
+    });
 
     treatmentsName.text(name);
     bodyArea.text(`Affected body area: ${area}`)

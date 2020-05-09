@@ -62,6 +62,4 @@ export const loginModal = () => {
     fragment.append(modal);
 
   return fragment;
-
-
 }
