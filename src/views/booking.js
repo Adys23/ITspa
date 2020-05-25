@@ -52,11 +52,12 @@ export const booking = () => {
     fragment.find("#submitBtn").on('click', ()=> {
         let arrivalDate = arrival.val();
         let departureDate = departure.val();
-        
+        let newCookie = [...parsedValue, arrivalDate, departureDate];
+        sessionCookie.set(newCookie);
     })
 
-    fragment.find('#datetimepicker').append(arrival)
-    fragment.find('#datetimepicker2').append(departure)
+    fragment.find('#datetimepicker').append(arrival);
+    fragment.find('#datetimepicker2').append(departure);
 
   return Promise.resolve(fragment);
 };

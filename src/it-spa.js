@@ -7,20 +7,32 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 import './it-spa.scss';
 
-import { Router } from './router/router';
-import { nav } from './navigation/navbar';
-import { Cart } from './cart/cart';
+import {
+    Router
+} from './router/router';
+import {
+    nav
+} from './navigation/navbar';
+import {
+    Cart
+} from './cart/cart';
 
 
 const main = $('main');
 
 const router = new Router();
-const cookie = new Cart();
+const createCookie = new Cart();
+
+const parsedValue = createCookie.get();
+
+if (parsedValue.length === 0) {
+    createCookie.set([
+        ["anonymous"]
+    ]);
+};
 
 router.mount(main);
 
 router.init();
 
 main.before(nav());
-
-console.log(document.cookie)

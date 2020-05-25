@@ -21,8 +21,9 @@ export const room = (name, beds, guests, price) => {
     const cardBody = $(`<div class="card-body"></div>`);
 
     const anchor = $('<a href="/treatments" class="btn btn-dark">Book now</a>');
-    anchor.on('click', () => {     
-        const newCookie = [...parsedValue, name];
+    anchor.on('click', () => {
+        const roomsArray = [...parsedValue[1], name];     
+        const newCookie = [...parsedValue, roomsArray];
         Cookie.set(newCookie);
     });
 

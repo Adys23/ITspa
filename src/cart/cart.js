@@ -1,4 +1,3 @@
-
 export class Cart {
 
   constructor() {
@@ -24,6 +23,10 @@ export class Cart {
       const itSpaCookie = this.cookie(); // 'IT_SPA_CART=[1,2,2]'
       const cookieValue = itSpaCookie.split('=')[1]; // ['IT_SPA_CART', '[1,2,2]']
       const parsedValue = JSON.parse(cookieValue); // wartosc
+
+      if (parsedValue === undefined) {
+        parsedValue = [];
+      }
 
       return parsedValue;
     } else {
